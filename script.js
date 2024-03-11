@@ -29,11 +29,15 @@ const newGame = () => {
 
 const shift = (idx) => {
     if (grid[idx-1] == 8) {
-        grid[idx-1] = grid[idx];
-        grid[idx] = 8;
+        if (idx != 3 && idx != 6){
+            grid[idx-1] = grid[idx];
+            grid[idx] = 8;
+        }
     } else if (grid[idx+1] == 8) {
-        grid[idx+1] = grid[idx];
-        grid[idx] = 8;
+        if (idx != 2 && idx != 5){
+            grid[idx+1] = grid[idx];
+            grid[idx] = 8;
+        }
     } else if (grid[idx+3] == 8) {
         grid[idx+3]=grid[idx];
         grid[idx] =8;
